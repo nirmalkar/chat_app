@@ -1,10 +1,21 @@
 const socket = io()
 
-socket.on("countUpdated", (count) => {
-  console.log(`The count has been updated is ${count}`)
+socket.on("message", (message) => {
+  console.log(message)
 })
 
-document.querySelector("#increment").addEventListener("click", () => {
-  console.log("clicked")
-  socket.emit("increment")
+document.querySelector("#message-form").addEventListener("submit", (e) => {
+  e.preventDefault()
+  const message = e.target.elements.message.value
+  socket.emit("sendMessage", message)
+})
+
+document.querySelector("#sendLocation").addEventListener("click", (e) => {
+  e.preventDefault()
+  if (!navigator.geolocation) {
+    return alert("Geo location is not supported by your browser.")
+  }
+  navigator.geolocation.getCurrentPosition((position) => {
+    console.log(position)
+  })
 })
