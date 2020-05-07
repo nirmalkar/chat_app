@@ -2,6 +2,7 @@ const path = require("path")
 const http = require("http")
 const express = require("express")
 const socketio = require("socket.io")
+const axios = require("axios")
 
 const app = express()
 const server = http.createServer(app)
@@ -23,6 +24,9 @@ io.on("connection", (socket) => {
   })
   socket.on("disconnect", () => {
     io.emit("message", "A user has left!")
+  })
+  socket.on("sendLocation", (coord) => {
+    io.emit("message", `https://google.com/maps?q=${coord.latitude},${coord.longitude}`)
   })
 })
 server.listen(port, () => {
