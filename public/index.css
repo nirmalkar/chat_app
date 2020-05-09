@@ -19,3 +19,8 @@ color: white;
   box-shadow: none !important;
   background-color:  #c6f5eb!important;
 }
+.time-decor{
+  color: rgb(90, 88, 88);
+  font-size: 12px;
+  margin-left: 1.2rem;
+}

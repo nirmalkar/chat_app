@@ -42,12 +42,12 @@
 </body>
 <script id="message-template" type="text/html">
           <div>
-            <p>{{message}}</p>
+            <span>{{message}}</span><span class="time-decor">{{time}}</span>
           </div>
         </script>
 <script id="location-message-template" type="text/html">
               <div>
-                <p>{{time}}&nbsp;-<a href="{{url}}" target="_blank"> My current location</a></p>
+                <span><a href="{{url}}" target="_blank"> My current location</a></span><span class="time-decor">{{time}}</span>
               </div>
     </script>
 <script src="/socket.io/socket.io.js"></script>
