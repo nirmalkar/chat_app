@@ -12,20 +12,21 @@ const messageTemplate = document.querySelector("#message-template").innerHTML
 
 socket.on("message", (message) => {
   console.log(message)
-  const html = Mustache.render(messageTemplate)
+  const html = Mustache.render(messageTemplate, {
+    message
+  })
   messages.insertAdjacentHTML("beforeend", html)
 })
 
 messageForm.addEventListener("submit", (e) => {
   e.preventDefault()
   messageFormButton.setAttribute("disabled", "disabled")
-  messageFormInput.value = ""
   messageFormInput.focus()
 
   const message = e.target.elements.message.value
   socket.emit("sendMessage", message, (err) => {
     messageFormButton.removeAttribute("disabled")
-
+    messageFormInput.value = ""
     if (err) {
       console.log(err)
     } else {
