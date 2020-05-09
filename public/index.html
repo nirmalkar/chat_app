@@ -5,31 +5,60 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chat App</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  <link rel="stylesheet" href="./index.css">
 </head>
 
 <body>
-  <h1>Hello</h1>
-  <div id="messages"></div>
-  <form id="message-form">
-    <input name="message" type="text">
-    <button>Send</button>
-  </form>
-  <button id="sendLocation">Send Location</button>
-  <script id="message-template" type="text/html">
-    <div>
-      <p>{{message}}</p>
+  <div class="row no-gutters">
+    <div class="col-3 bg-dark sidebar">
+      <!-- <p>Chat App</p> -->
     </div>
-  </script>
-  <script id="location-message-template" type="text/html">
-    <div>
-      <p>{{time}}&nbsp;<a href="{{url}}" target="_blank"> My current location</a></p>
+    <div class="col-9 bg-light">
+      <div class="card m-2 border-0 shadow-sm chat-txt-crd-h">
+        <div class="card-body">
+          <div id="messages"></div>
+        </div>
+        <form id="message-form">
+          <span>
+            <span class="input-group input-group txt-in-m-l mb-4" id="text-input-width">
+              <input class="form-control bg-light input-field-decor" placeholder="text here!" name="message"
+                type="text">
+              <button class="btn btn-primary d-none">Send</button class="btn btn-primary">
+              <button class="btn btn-light" id="sendLocation">
+                <i class="fas fa-map-marker-alt"></i>
+              </button>
+            </span>
+            <span>
+            </span>
+          </span>
+        </form>
+      </div>
     </div>
-  </script>
-  <script src="/socket.io/socket.io.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.6.0/qs.min.js"></script> -->
-  <script src="/js/chat.js"></script>
+  </div>
 </body>
+<script id="message-template" type="text/html">
+          <div>
+            <p>{{message}}</p>
+          </div>
+        </script>
+<script id="location-message-template" type="text/html">
+              <div>
+                <p>{{time}}&nbsp;-<a href="{{url}}" target="_blank"> My current location</a></p>
+              </div>
+    </script>
+<script src="/socket.io/socket.io.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+  integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+  integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+  integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="/js/chat.js"></script>
 
 </html>

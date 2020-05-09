@@ -1,0 +1,22 @@
+.sidebar{
+height: 100vh;
+color: white;
+}
+.chat-txt-crd-h{
+  height: 98vh;
+}
+#text-input-width{
+  width: 40rem;
+}
+.txt-in-m-l{
+  margin-left: 10rem;
+}
+/* .input-field-decor{
+  box-shadow: red !important;
+} */
+/* .input-field-decor :hover{
+  box-shadow: none;
+outline: none !important;
+} */
+.form-control:focus{border-color: #5cb85c;  box-shadow: none; -webkit-box-shadow: none;} 
+.has-error .form-control:focus{box-shadow: none; -webkit-box-shadow: none;}
