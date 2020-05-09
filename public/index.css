@@ -11,12 +11,11 @@ color: white;
 .txt-in-m-l{
   margin-left: 10rem;
 }
-/* .input-field-decor{
-  box-shadow: red !important;
-} */
-/* .input-field-decor :hover{
-  box-shadow: none;
-outline: none !important;
-} */
-.form-control:focus{border-color: #5cb85c;  box-shadow: none; -webkit-box-shadow: none;} 
-.has-error .form-control:focus{box-shadow: none; -webkit-box-shadow: none;}
+.input-field-decor{
+  box-shadow: none !important;
+  background-color: #c6f5eb!important;
+} 
+.btn-decorator{
+  box-shadow: none !important;
+  background-color:  #c6f5eb!important;
+}
